@@ -1,14 +1,3 @@
-<!--
-  Hello!
-  -
-  Simplefolio is a clean and responsive portfolio template for Developers!
-  Created by Jacobo Martinez.
-  -
-  Github Repo: https://github.com/cobidev/simplefolio/
-  Readme: https://github.com/cobidev/simplefolio/README.md
-  -
-  For business & inquires, contact me -> jacobojavier98@gmail.com
--->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,9 +7,9 @@
     <link rel="shortcut icon" type="image/png" href="./assets/favicon.png" />
 
     <!-- Put here your site title -->
-    <title>[Your name here] | Developer</title>
+    <title>CK_portfolio | Developer</title>
     <!-- Add some coding keywords below, Ex: (javascript, yourusername, etc) -->
-    <meta name="keywords" content="[username], [name], skill" />
+    <meta name="keywords" content="ck, [name], skill" />
     <!-- Improve your SEO by adding a small descrption of you -->
     <meta name="description" content="[Your name here] | Developer" />
 
@@ -30,12 +19,15 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
     <script>
       ScrollReveal({ reset: false });
     </script>
 
     <!-- Remove this script once you setup your custom portfolio -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!--script async defer src="https://buttons.github.io/buttons.js"></script-->
   </head>
 
   <!-- Follow the HTML instructions to create your stunning portfolio website -->
@@ -46,7 +38,7 @@
     <div id="hero" class="jumbotron">
       <div class="container">
         <h1 class="hero-title" class="load-hidden">
-          Hi, my name is <span class="text-color-main">Your Name</span>
+          はじめまして<span class="text-color-main">Your Name</span>
           <br />
           I'm the Unknown Developer.
         </h1>
@@ -101,11 +93,109 @@
     </section>
     <!-- /END About Section -->
 
+    <!-- **** Skill Section **** -->
+    <section id="skill">
+      <div class="container">
+        <h2 class="section-title">
+          Skills
+        </h2>
+          <div class="col-md-6 col-sm-12">
+          <!--canvas는 max-height을 설정해줘야 넘치지 않는다-->
+            <div class="skill-wrapper__image" style="min-height:350px; max-height:350px">
+              <canvas id="front-end-chart" height="200px"></canvas>
+            </div>
+            <script>
+              var ctx = document.getElementById('front-end-chart').getContext('2d');
+              var chart = new Chart(ctx, {
+                  // The type of chart we want to create
+                  type: 'radar',
+
+                  // The data for our dataset
+                  data: {
+                      labels: ['HTML', 'CSS', 'JavaScript', 'Dart', 'XAML'],
+                      datasets: [{
+                          label: 'Front-end',
+                          backgroundColor: 'rgba(238,175,175,0.3)',
+                          borderColor: '#FF7F7F',
+                          borderWidth: 2,
+                          data: [2, 1, 1, 3, 3]
+                      }]
+                  },
+                  // Configuration options go here
+                  options: {
+                    scale: {
+                      angleLines: {
+                        display: true
+                      },
+                      ticks: {
+                        suggestedMin: 0,
+                        suggestedMax: 5
+                      }
+                    }
+                  }
+              });
+            </script>
+          </div>
+        <div class="row skill-wrapper">
+          <div class="col-md-6 col-sm-12">
+            <!--canvas는 max-height을 설정해줘야 넘치지 않는다-->
+            <div class="skill-wrapper__image" style="min-height:350px; max-height:350px">
+              <canvas id="back-end-chart"  height="200px"></canvas>
+            </div>
+            <script>
+              var ctx = document.getElementById('back-end-chart').getContext('2d');
+              var chart = new Chart(ctx, {
+                  // The type of chart we want to create
+                  type: 'radar',
+
+                  // The data for our dataset
+                  data: {
+                      labels: ['C#', 'PostgreSQL', 'MySQL', 'MSSQL', 'Java'],
+                      datasets: [{
+                          label: 'Back-end',
+                          backgroundColor: 'rgba(169,225,237,0.3)',
+                          borderColor: '#AFC4E7',
+                          borderWidth: 2,
+                          data: [2, 4, 2, 4, 3]
+                      }]
+                  },
+
+                  // Configuration options go here
+                  options: {
+                    scale: {
+                      angleLines: {
+                        display: true
+                      },
+                      ticks: {
+                        suggestedMin: 0,
+                        suggestedMax: 5
+                      }
+                    }
+                  }
+              });
+            </script>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="skill-wrapper__info">
+              <ul class="skill-level">
+                <li>5 - 専門家</li>
+                <li>4 - 他人の企画を確認し、設計できる</li>
+                <li>3 - 他人が作成した設計書を確認し、開発できる</li>
+                <li>2 - 他人のソースコードを確認し、保守できる</li>
+                <li>1 - 初心者</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /END Skill Section -->
+
     <!-- **** Projects Section **** -->
     <section id="projects">
       <div class="container">
         <div class="project-wrapper">
-          <h2 class="section-title dark-blue-text">
+          <h2 class="section-title">
             Projects
           </h2>
 
@@ -113,20 +203,22 @@
           <div class="row">
             <div class="col-lg-4 col-sm-12">
               <div class="project-wrapper__text">
-                <h3 class="project-wrapper__text-title">Project Title</h3>
+                <h3 class="project-wrapper__text-title">HuPoint</h3>
                 <div>
                   <p class="mb-4">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Excepturi neque, ipsa animi maiores repellendus distinctio
-                    aperiam earum dolor voluptatum consequatur blanditiis
-                    inventore debitis fuga numquam voluptate ex architecto
-                    itaque molestiae.
+                    概要：薬局のポイントㅏ獲得するシステム<br>
+                    クライアント名：HuBase(www.hubase.kr)<br>
+                    制作時期：2020.11~2020.12<br>
+                    制作期間：約2ヶ月<br>
+                    プロジェクトのコンセプト：内部DB（MSSQL）とWPF, Andorid間のデータ（お客さんの情報、ポイントなど）やりとり<br>
+                    使用言語：C#、Java、MSSql<br>
+                    担当ポジション：全体（設計、企画、開発、テスト）
                   </p>
                 </div>
-                <a target="_blank" class="cta-btn cta-btn--hero" href="#!">
+                <a target="_blank" class="cta-btn cta-btn--resume" href="#!">
                   See Live
                 </a>
-                <a target="_blank" class="cta-btn text-color-main" href="#!">
+                <a target="_blank" class="cta-btn white-text" href="#!">
                   Source Code
                 </a>
               </div>
@@ -147,20 +239,22 @@
           <div class="row">
             <div class="col-lg-4 col-sm-12">
               <div class="project-wrapper__text">
-                <h3 class="project-wrapper__text-title">Project Title</h3>
+                <h3 class="project-wrapper__text-title">Eye Level</h3>
                 <div>
                   <p class="mb-4">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Excepturi neque, ipsa animi maiores repellendus distinctio
-                    aperiam earum dolor voluptatum consequatur blanditiis
-                    inventore debitis fuga numquam voluptate ex architecto
-                    itaque molestiae.
+                    概要：Web教育用ホームページ<br>
+                    クライアント名：DaeKyo(www.daekyo.com)<br>
+                    制作時期：2020.08~2020.10<br>
+                    制作期間：約3ヶ月<br>
+                    プロジェクトのコンセプト：簡単なアニメーションやオブジェクトを使用、子供たちに教育を提供<br>
+                    使用言語：HTML、CSS、jQuery<br>
+                    担当ポジション：開発、保守
                   </p>
                 </div>
-                <a target="_blank" class="cta-btn cta-btn--hero" href="#!">
+                <a target="_blank" class="cta-btn cta-btn--resume" href="#!">
                   See Live
                 </a>
-                <a target="_blank" class="cta-btn text-color-main" href="#!">
+                <a target="_blank" class="cta-btn white-text" href="#!">
                   Source Code
                 </a>
               </div>
@@ -181,20 +275,59 @@
           <div class="row">
             <div class="col-lg-4 col-sm-12">
               <div class="project-wrapper__text">
-                <h3 class="project-wrapper__text-title">Project Title</h3>
+                <h3 class="project-wrapper__text-title">高等語</h3>
                 <div>
                   <p class="mb-4">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Excepturi neque, ipsa animi maiores repellendus distinctio
-                    aperiam earum dolor voluptatum consequatur blanditiis
-                    inventore debitis fuga numquam voluptate ex architecto
-                    itaque molestiae.
+                    概要：高校生の為の教育アプリ、韓国語でサバと同音異義語<br>
+                    クライアント名：なし（自主制作）<br>
+                    制作時期：2020.07~2020.08<br>
+                    制作期間：約2ヶ月<br>
+                    プロジェクトのコンセプト：韓国高校生のセンター試験の手伝うため、
+                    模擬試験や過去のセンター試験を使用、スマホーで自習できるアプリケーション。<br>
+                    使用言語：Flutter、MYSql、Linux<br>
+                    担当ポジション：開発、保守
                   </p>
                 </div>
-                <a target="_blank" class="cta-btn cta-btn--hero" href="#!">
+                <a target="_blank" class="cta-btn cta-btn--resume" href="#!">
                   See Live
                 </a>
-                <a target="_blank" class="cta-btn text-color-main" href="#!">
+                <a target="_blank" class="cta-btn white-text" href="#!">
+                  Source Code
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-8 col-sm-12">
+              <div class="project-wrapper__image">
+                <a href="#!" target="_blank">
+                  <div data-tilt class="thumbnail rounded">
+                    <img class="img-fluid" src="./assets/project.jpg" />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- /END Project -->
+
+          <!-- Each .row is a project -->
+          <div class="row">
+            <div class="col-lg-4 col-sm-12">
+              <div class="project-wrapper__text">
+                <h3 class="project-wrapper__text-title">建設会社のデータ移行作業</h3>
+                <div>
+                  <p class="mb-4">
+                    概要：<br>
+                    クライアント名：NEXCO<br>
+                    制作時期：2019.09~2020.06<br>
+                    制作期間：約10ヶ月<br>
+                    プロジェクトのコンセプト：新規の。<br>
+                    使用言語：PostgreSQL<br>
+                    担当ポジション：DB開発、画面テスト、仕様書作成
+                  </p>
+                </div>
+                <a target="_blank" class="cta-btn cta-btn--resume" href="#!">
+                  See Live
+                </a>
+                <a target="_blank" class="cta-btn white-text" href="#!">
                   Source Code
                 </a>
               </div>
@@ -227,7 +360,7 @@
           </p>
           <a
             target="_blank"
-            class="cta-btn cta-btn--resume"
+            class="cta-btn cta-btn--hero"
             href="mailto:example@email.com"
             >Call to Action</a
           >

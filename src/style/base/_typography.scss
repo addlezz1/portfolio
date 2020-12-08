@@ -22,6 +22,21 @@ a:hover {
   transition: all 0.3s ease-in-out;
 }
 
+ul {
+  list-style: none;
+  font-size: 16px;
+}
+
+.skill-level {
+  margin: 1rem 0 0 0;
+  border: 1px solid #E0E0E0;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+  padding: 10px;
+  text-align: left;
+}
+
 .section-title {
   margin: 0px;
   margin-bottom: 4.5rem;
@@ -38,9 +53,13 @@ a:hover {
   color: $dark-blue-text !important;
 }
 
+.white-text {
+  color: #FFFFFF !important;
+}
+
 .text-color-main {
   @include supportColorForIE11();
-  
+
   // Responsive text purple style
   @include respond(phone) {
     background-image: none;

@@ -7,35 +7,35 @@ export default function() {
     desktop: true,
     mobile: true
   };
-  
+
   /* Section Title */
-  ScrollReveal().reveal('.section-title', 
+  ScrollReveal().reveal('.section-title',
     assignProps(
       {
-        delay:300,distance:'0px', 
+        delay:300,distance:'0px',
         origin:'bottom'
       }, defaultProps)
   );
 
   /* Hero Section */
-  ScrollReveal().reveal('.hero-title', 
+  ScrollReveal().reveal('.hero-title',
     assignProps(
-      { 
-        delay: 500, 
+      {
+        delay: 500,
         origin: window.innerWidth > 768 ? 'left' : 'bottom'
       }, defaultProps)
   );
-  
-  ScrollReveal().reveal('.hero-cta', 
+
+  ScrollReveal().reveal('.hero-cta',
     assignProps(
       {
-        delay: 1000, 
+        delay: 1000,
         origin: window.innerWidth > 768 ? 'left' : 'bottom'
       }, defaultProps)
   );
 
   /* About Section */
-  ScrollReveal().reveal('.about-wrapper__image', 
+  ScrollReveal().reveal('.about-wrapper__image',
     assignProps(
       {
         delay: 600,
@@ -43,7 +43,24 @@ export default function() {
       }, defaultProps)
   );
 
-  ScrollReveal().reveal('.about-wrapper__info', 
+  ScrollReveal().reveal('.about-wrapper__info',
+    assignProps(
+      {
+        delay: 1000,
+        origin: window.innerWidth > 768 ? 'left' : 'bottom'
+      }, defaultProps)
+  );
+
+  /*Skill Section */
+  ScrollReveal().reveal('.skill-wrapper__image',
+    assignProps(
+      {
+        delay: 300,
+        origin: 'bottom'
+      }, defaultProps)
+  );
+
+  ScrollReveal().reveal('.skill-wrapper__info',
     assignProps(
       {
         delay: 1000,
@@ -52,7 +69,7 @@ export default function() {
   );
 
   /* Projects Section */
-  ScrollReveal().reveal('.project-wrapper__text', 
+  ScrollReveal().reveal('.project-wrapper__text',
     assignProps(
       {
         delay: 500,
@@ -60,7 +77,7 @@ export default function() {
       }, defaultProps)
   );
 
-  ScrollReveal().reveal('.project-wrapper__image', 
+  ScrollReveal().reveal('.project-wrapper__image',
     assignProps(
       {
         delay: 1000,
@@ -69,7 +86,7 @@ export default function() {
   );
 
   /* Contact Section */
-  ScrollReveal().reveal('.contact-wrapper', 
+  ScrollReveal().reveal('.contact-wrapper',
     assignProps(
       {
         delay: 800,
