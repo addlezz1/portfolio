@@ -1,5 +1,6 @@
 import initTilt from './js/tilt';
 import initSr from './js/sr';
+import initModal from './js/modal';
 
 import './style/main.scss';
 
